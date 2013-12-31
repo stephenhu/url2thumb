@@ -1,0 +1,2 @@
+xvfb-run ruby lib/url2thumb
+
