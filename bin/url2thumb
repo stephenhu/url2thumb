@@ -1,2 +1,5 @@
-xvfb-run ruby lib/url2thumb
+#!/usr/bin/env ruby
+require "url2thumb"
+
+Url2thumb::CLI.start
 

@@ -5,7 +5,9 @@ module Url2thumb
     desc( "capture", "capture url and convert into a thumbnail" )
     def capture(url)
 
-      puts url
+      capy = Url2thumb::Capytool.new
+
+      capy.to_thumbnail(url)
 
     end
 
