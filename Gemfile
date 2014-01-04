@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem "capybara-webkit"
+gem "colorize"
 gem "highline/import"
 gem "thor"
 

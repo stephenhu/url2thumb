@@ -15,7 +15,7 @@ module Url2thumb
 
     end
 
-    def to_thumbnail(url)
+    def to_thumbnail( url, dest=BASEDIR )
 
       visit url
 
@@ -23,17 +23,17 @@ module Url2thumb
 
       hash = Digest::MD5.hexdigest(url)
 
-      filename = hash[0..8] + PNGEXT
+      filename = dest + SLASH + hash[0..8] + PNGEXT
 
-      unless File.exists?(filename)
+      if File.exists?(filename)
+
+        puts "File already exists, no action taken.".yellow
+
+      else
 
         page.save_screenshot( filename, width: 1024, height: 768 )
 
-        return true
-
       end
-
-      return false
 
     end
 
