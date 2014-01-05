@@ -27,11 +27,13 @@ module Url2thumb
 
       if File.exists?(filename)
 
-        puts "File already exists, no action taken.".yellow
+        $stderr.puts "File already exists, no action taken.".yellow
 
       else
 
         page.save_screenshot( filename, width: 1024, height: 768 )
+
+        $stdout.puts "#{filename} created.".green
 
       end
 
